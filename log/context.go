@@ -8,7 +8,7 @@ import (
 
 type loggerContextKey struct{}
 
-func NewContextWithLogger(ctx context.Context, logger *slog.Logger) context.Context {
+func IntoContext(ctx context.Context, logger *slog.Logger) context.Context {
 	return context.WithValue(ctx, loggerContextKey{}, logger)
 }
 
